@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    {% for mesg in get_flashed_messages() %}
+      <h1>{{ mesg }}</h1>
+      {% endfor %}
+
+
+      
+<div class="login-form">
+
+<form method="POST">
+<h2 class="text-center">Log in</h2> 
+{{form.hidden_tag()}}
+<div class="form-group">
+{{form.email.label(class='form-group')}}{{form.email(class='form-control')}}<br>
+</div>
+<div class="form-group">
+{{form.password.label(class='form-group')}}{{form.password(class='form-control')}}<br>
+</div>
+<div class="form-group">
+{{form.submit(class="btn btn-primary btn-block")}}<br>
+
+</div>
+
+</div>
+
+</form>
+
+</body>
+
+
+{% endblock %}
